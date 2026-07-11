@@ -45,10 +45,11 @@ export default function Home() {
             <Skills />
             <Projects />
             <Experience />
-            {/* GitHub Activity Section */}
+            {/* GitHub Activity Section - commented out
             <section className="section-container">
               <GitHubActivity />
             </section>
+            */}
 
             <Contact />
           </main>
