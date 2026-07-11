@@ -114,7 +114,7 @@ export default function ResumeViewerModal({ isOpen, onClose }: ResumeViewerModal
             {/* PDF Viewer / Document Preview Container */}
             <div className="relative flex-1 bg-black/10 p-4">
               <iframe
-                src={`${activeTab.file}#toolbar=0`}
+                src={`${activeTab.file}#toolbar=0&navpanes=0&scrollbar=0&view=Fit`}
                 title={`${activeTab.label} Resume Preview`}
                 className="h-full w-full rounded-lg border border-border/50 bg-card shadow-inner"
               />
