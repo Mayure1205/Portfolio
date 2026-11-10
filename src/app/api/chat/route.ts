@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { PROJECTS } from "@/lib/constants";
 
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 
@@ -18,33 +19,21 @@ const SYSTEM_PROMPT = `You are an AI assistant on Mayuresh Tardekar's portfolio 
 - Relevant coursework: Data Structures, Algorithms, DBMS, Computer Networks, Cloud Fundamentals, Software Engineering, OS, Distributed Systems
 
 **Projects:**
-1. AgentForge — AI No-Code Chatbot Builder (React, TypeScript, Supabase, pgvector) 2025
-   - Multi-tenant SaaS for creating AI chatbots using RAG without code
-   - Document ingestion pipeline with chunking, embedding, pgvector semantic search
-   - Embeddable chat widget with analytics dashboard
-
-2. BidArena — Real-Time Auction Platform (React, TypeScript, Node.js, MongoDB) 2025
-   - Real-time bidding with JWT auth and Razorpay payments
-   - WebSocket event broadcasting via Socket.io
-   - Automated auction lifecycle with cron jobs
-
-3. EzyVote — Decentralized Voting dApp (Solidity, Hardhat, ethers.js, OpenZeppelin) 2024-2025
-   - Blockchain-based voting with immutability and transparency
-   - Optimized gas usage with OpenZeppelin security standards
+${PROJECTS.map(
+  (project, index) =>
+    `${index + 1}. ${project.title} (${project.techStack.join(", ")}) ${project.year}\n   - ${project.longDescription}`
+).join("\n\n")}
 
 **Technical Skills:**
-- Languages: JavaScript, Python, Java, C++
+- Languages: JavaScript, Python, Java, C++, Solidity
 - Frontend: React, TypeScript
 - Backend: Node.js, Express
 - Databases: MongoDB, MySQL, Supabase, pgvector, Prisma
 - Cloud & DevOps: AWS, Docker, Kubernetes, Linux
-- Blockchain: Solidity, ethers.js, OpenZeppelin
 - Tools: Git, GitHub, Postman
 
 **Achievements:**
 - Alkimi Move FWD Hackathon (2025)
-- SPIT REDACT Hackathon (2025)
-- NPTEL Certifications: ML, Big Data, Coding Theory (2024)
 
 **Languages:** English, Hindi, Marathi
 

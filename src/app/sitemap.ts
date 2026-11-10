@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
+import { PROJECTS } from "@/lib/constants";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-const projectSlugs = ["agentforge", "ezyvote", "bidarena", "sahayak"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
-    ...projectSlugs.map((slug) => ({
+    ...PROJECTS.map(({ slug }) => ({
       url: `${siteUrl}/projects/${slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,

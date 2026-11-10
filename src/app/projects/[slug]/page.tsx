@@ -149,7 +149,7 @@ export default function CaseStudyPage() {
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-primary"
               >
                 <Github size={16} />
-                View Code
+                {project.githubLabel ?? "View Code"}
               </a>
             )}
             {project.live && (
@@ -370,14 +370,17 @@ export default function CaseStudyPage() {
             variants={staggerContainer}
           >
             <motion.h2 variants={fadeUp} className="mb-4 text-3xl font-bold">
-              Interested in this project?
+              {project.github || project.live ? "Interested in this project?" : "Explore more projects"}
             </motion.h2>
-            <motion.p
-              variants={fadeUp}
-              className="mb-8 text-muted-foreground"
-            >
-              Check out the code on GitHub or try the live demo.
-            </motion.p>
+            {(project.github || project.live) && (
+              <motion.p variants={fadeUp} className="mb-8 text-muted-foreground">
+                {project.github && project.live
+                  ? "Check out the code on GitHub or try the live demo."
+                  : project.github
+                    ? "Check out the code on GitHub."
+                    : "Try the live demo."}
+              </motion.p>
+            )}
             <motion.div
               variants={fadeUp}
               className="flex flex-wrap justify-center gap-4"
@@ -390,7 +393,7 @@ export default function CaseStudyPage() {
                   className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-primary"
                 >
                   <Github size={16} />
-                  View on GitHub
+                  {project.githubLabel ?? "View on GitHub"}
                 </a>
               )}
               {project.live && (

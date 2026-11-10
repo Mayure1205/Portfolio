@@ -32,9 +32,10 @@ export const PERSONAL_INFO = {
   github: "https://github.com/MayureshTardekar",
   linkedin: "https://linkedin.com/in/mayuop",
   twitter: "https://x.com/MayuuuOP",
-  bio: `I'm a Full-Stack Developer & MCA student at SPIT Mumbai, passionate about building scalable web applications and exploring emerging technologies like blockchain and AI. I love turning complex problems into elegant solutions.`,
+  bio: "I'm a software engineer who loves solving problems and building useful software. As technology evolves, I learn by building with new tools and applying them where they make a difference.",
   shortBio: "Building things that live on the internet.",
   resumeUrl: "/resume.pdf",
+  resumeFilename: "Mayuresh_Tardekar_Resume.pdf",
 };
 
 export const NAV_LINKS = [
@@ -52,7 +53,6 @@ export type SkillCategory =
   | "Backend"
   | "Database"
   | "DevOps"
-  | "Blockchain"
   | "Tools";
 
 export interface Skill {
@@ -81,7 +81,7 @@ export const SKILLS: Skill[] = [
     category: "Languages",
     color: "#3178c6",
     whyUsed: "TypeScript is essential for keeping large codebases scalable and error-free. It adds static typing, interfaces, and generic types to JavaScript, which lets me catch potential runtime errors during development and refactor code with confidence.",
-    whereUsed: "I used it in AgentForge to build type-safe React components and schema types, in Sahayak to ensure API requests match expectations, and throughout this entire Next.js portfolio.",
+    whereUsed: "I used it in ForgeAgent to build type-safe React components and schema types, in Sahayak to ensure API requests match expectations, and throughout this entire Next.js portfolio.",
     whyLearned: "Self-taught TypeScript after my plain JavaScript codebases grew too large and complex to maintain. The benefits of autocompletion and compiler safety made it my default stack."
   },
   {
@@ -117,7 +117,7 @@ export const SKILLS: Skill[] = [
     category: "Frontend",
     color: "#61dafb",
     whyUsed: "React is my preferred framework for building component-driven user interfaces. Its virtual DOM, declarative state management, and custom hook patterns allow me to build modular, reactive, and highly reusable frontend components.",
-    whereUsed: "Built the dashboards and client dashboards for AgentForge, the live bidding room UI for BidArena, and the dynamic pages for Sahayak.",
+    whereUsed: "Built the dashboards and client dashboards for ForgeAgent, the live bidding room UI for BidArena, and the dynamic pages for Sahayak.",
     whyLearned: "Introduced at SPIT Mumbai, but mastered by building projects. Reading React docs and shipping real UIs taught me about state optimization, virtual DOM rendering, and custom hooks."
   },
   {
@@ -135,7 +135,7 @@ export const SKILLS: Skill[] = [
     category: "Frontend",
     color: "#06b6d4",
     whyUsed: "Tailwind CSS allows me to design beautiful, modern interfaces at rapid speed. Its utility-first approach keeps my styling clean and co-located with the TSX code, eliminating the need to write and maintain massive CSS sheets.",
-    whereUsed: "Applied across all my modern projects, including the dashboards of AgentForge, the theme options in Sahayak, and the glassmorphic dark mode layout of this portfolio.",
+    whereUsed: "Applied across all my modern projects, including the dashboards of ForgeAgent, the theme options in Sahayak, and the glassmorphic dark mode layout of this portfolio.",
     whyLearned: "Self-taught to speed up my design prototyping. It transformed styling from a tedious layout process into a fast, fluid experience."
   },
   {
@@ -180,7 +180,7 @@ export const SKILLS: Skill[] = [
     category: "Database",
     color: "#3ecf8e",
     whyUsed: "Supabase is an incredible open-source Firebase alternative. It provides a managed PostgreSQL database with auto-generated REST APIs, secure user authentication, row-level security (RLS), and real-time database subscription features out of the box.",
-    whereUsed: "Acts as the entire backend and database for AgentForge, handling user login, PostgreSQL data queries, and file storage for chatbot documents.",
+    whereUsed: "Acts as the entire backend and database for ForgeAgent, handling user login, PostgreSQL data queries, and file storage for chatbot documents.",
     whyLearned: "Self-taught to bypass building boilerplate backends, allowing me to focus on product features, security, and vector databases."
   },
   {
@@ -231,9 +231,9 @@ export const SKILLS: Skill[] = [
   {
     name: "Solidity",
     icon: SiSolidity,
-    category: "Blockchain",
+    category: "Languages",
     color: "#9c9c9c",
-    whyUsed: "Solidity is the primary language for writing smart contracts on Ethereum and other EVM-compatible blockchains. It requires extreme precision because deployed code is immutable and handles financial transactions.",
+    whyUsed: "Solidity is a language for writing smart contracts on Ethereum and other EVM-compatible networks. It requires precision because deployed code is difficult to change and can handle financial transactions.",
     whereUsed: "Designed the core transparent election and voter verification contract for EzyVote, ensuring tamper-proof, secure on-chain elections.",
     whyLearned: "Self-taught out of pure curiosity for decentralized apps (dApps) and Web3, leading to building secure smart contracts."
   },
@@ -273,8 +273,10 @@ export interface Project {
   longDescription: string;
   techStack: string[];
   github?: string;
+  githubLabel?: string;
   live?: string;
   image?: string;
+  imageFit?: "contain";
   featured: boolean;
   year: string;
   problemStatement?: string;
@@ -288,7 +290,7 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
-    title: "AgentForge",
+    title: "ForgeAgent",
     slug: "agentforge",
     description:
       "AI No-Code Chatbot Builder — A multi-tenant SaaS platform for creating and deploying AI-powered chatbots using RAG.",
@@ -322,12 +324,74 @@ export const PROJECTS: Project[] = [
     duration: "3 weeks",
   },
   {
+    title: "Dexter Write",
+    slug: "dexter-write",
+    description:
+      "AI-assisted writing workspace for Markdown and LaTeX with live previews, document editing through MCP, and PDF export.",
+    longDescription:
+      "Built a writing workspace that pairs a Markdown and LaTeX editor with an AI assistant that can read and edit the active document. Users can bring their own AI provider key, review changes as diffs, and export their work in multiple formats.",
+    techStack: ["React", "TypeScript", "Monaco Editor", "MCP"],
+    github: "https://github.com/MayureshTardekar/Dexter-Writer",
+    live: "https://dexter-writer.vercel.app/",
+    image: "/images/dexter-write.png",
+    featured: true,
+    year: "2026",
+    problemStatement:
+      "Writing technical documents often means switching between an editor, a preview tool, and an AI chat, then manually copying edits back into the document.",
+    solutionApproach:
+      "Built document tools that let the assistant read and edit the active file in context. A diff review mode lets writers accept or reject changes before applying them.",
+    keyFeatures: [
+      "Markdown and LaTeX editor with live previews",
+      "Chat and voice controls for drafting and revising documents",
+      "MCP tools for reading, editing, and compiling documents",
+      "Bring-your-own-key support for multiple AI providers",
+      "Local MCP bridge for connecting external assistants to the active document",
+      "Export to PDF, Markdown, LaTeX, HTML, or plain text",
+    ],
+    challenges: [
+      "Give different AI providers the same editing interface by exposing the active Monaco buffer through MCP tools.",
+      "Make proposed edits easy to inspect by showing a diff before the writer accepts or rejects a change.",
+    ],
+    architecture:
+      "Chat or voice request → Selected AI provider → MCP document tools → Monaco editor and diff review → Preview and export",
+  },
+  {
+    title: "FitGo",
+    slug: "fitgo",
+    description:
+      "Offline-first fitness tracker for calories, fasting, workouts, hydration, sleep, and weight.",
+    longDescription:
+      "Built a Flutter app that stores fitness logs locally and turns them into daily targets and progress charts. It redistributes the remaining calorie allowance across the week and calculates fasting time from a saved start timestamp.",
+    techStack: ["Flutter", "Dart", "Riverpod", "Hive", "Supabase"],
+    github: "https://github.com/MayureshTardekar/FitGo",
+    image: "/images/fitgo.jpg",
+    imageFit: "contain",
+    featured: true,
+    year: "2026",
+    problemStatement:
+      "Tracking food, activity, and fasting gets harder when the tools require a connection or lose progress after a restart.",
+    solutionApproach:
+      "Built an offline-first dashboard that turns daily logs into weekly targets and progress charts. Hive stores activity on the device, and Supabase handles account sign-in.",
+    keyFeatures: [
+      "Weekly calorie budgets that adjust daily targets",
+      "Fasting timer that survives app restarts",
+      "Exercise, hydration, sleep, and weight logs",
+      "Progress charts for cumulative calorie intake, daily trends, and goal consistency",
+    ],
+    challenges: [
+      "Resume fasting sessions after the app restarts by calculating elapsed time from the start timestamp saved in Hive.",
+      "Adjust daily calorie targets by dividing the remaining weekly allowance across the days left in the week.",
+    ],
+    architecture:
+      "Flutter tracking screens → Riverpod state and calculations → Hive on-device storage → Analytics charts built with fl_chart",
+  },
+  {
     title: "EzyVote",
     slug: "ezyvote",
     description:
-      "Decentralized Voting dApp — A blockchain-based voting system ensuring immutability and transparency.",
+      "Decentralized voting app with tamper-resistant records and publicly verifiable results.",
     longDescription:
-      "Developed a blockchain-based voting system using Solidity smart contracts to ensure immutability, transparency, and tamper resistance. Integrated ethers.js for seamless frontend-contract communication. Optimized gas usage and applied OpenZeppelin security standards.",
+      "Developed a voting system that uses Solidity smart contracts to enforce voting rules and record results. Integrated ethers.js for frontend-contract communication, optimized gas usage, and applied OpenZeppelin security patterns.",
     techStack: ["Solidity", "Hardhat", "ethers.js", "OpenZeppelin"],
     github: "https://github.com/MayureshTardekar/EzyVote-Prototype",
     live: "https://ezyvote-git-stable-vite5-mayuresh0512s-projects.vercel.app/",
@@ -337,7 +401,7 @@ export const PROJECTS: Project[] = [
     problemStatement:
       "Traditional voting systems are vulnerable to tampering, lack transparency, and require trust in centralized authorities to ensure fair elections.",
     solutionApproach:
-      "Leveraged blockchain's immutability to create a transparent voting system where every vote is permanently recorded on-chain. Smart contracts enforce voting rules automatically, eliminating the need for trusted intermediaries.",
+      "Recorded each vote on-chain so results can be verified. Smart contracts enforce voting rules automatically.",
     keyFeatures: [
       "Immutable on-chain vote recording",
       "Transparent election results verifiable by anyone",
@@ -352,7 +416,7 @@ export const PROJECTS: Project[] = [
       "Synchronizing frontend state with on-chain transaction confirmations",
     ],
     architecture:
-      "React frontend → ethers.js for blockchain interaction → Solidity smart contracts on Ethereum → Hardhat for testing and deployment → OpenZeppelin for security patterns",
+      "React frontend → ethers.js for contract calls → Solidity smart contracts on Ethereum → Hardhat for testing and deployment → OpenZeppelin for security patterns",
     teamSize: "Solo",
     duration: "1 month",
   },
@@ -425,11 +489,71 @@ export const PROJECTS: Project[] = [
     teamSize: "Team of 4",
     duration: "10 hours (hackathon)",
   },
+  {
+    title: "ProStock",
+    slug: "prostock",
+    description:
+      "Paper trading platform for Indian markets with virtual funds, watchlists, and portfolio tracking.",
+    longDescription:
+      "Built a stock market simulator for practicing NSE and BSE trades with virtual funds. It uses market quotes to show portfolio value, profit and loss, and trading history.",
+    techStack: ["React", "TypeScript", "Node.js", "Express", "MySQL"],
+    github: "https://github.com/MayureshTardekar/ProStock",
+    image: "/images/prostock.jpg",
+    featured: true,
+    year: "2025",
+    problemStatement:
+      "New traders need a way to practice placing orders and understand how trades affect a portfolio before risking real money.",
+    solutionApproach:
+      "Built an Express API with MySQL to record simulated orders and holdings. The React dashboard uses Yahoo Finance quotes to show price movements and portfolio performance.",
+    keyFeatures: [
+      "Simulated buy and sell orders with a virtual balance",
+      "NSE and BSE stock search and watchlists",
+      "Holdings, profit and loss, and order history",
+      "Market dashboards for NIFTY 50, SENSEX, and BANK NIFTY",
+    ],
+    challenges: [
+      "Keep the order record, virtual cash balance, and share holdings consistent by writing them in one MySQL transaction.",
+      "Track the average purchase price across multiple buys so the analytics can calculate realized gains when shares are sold.",
+    ],
+    architecture:
+      "React and TypeScript trading dashboard → Express API with JWT authentication → MySQL for trades and holdings → Portfolio analytics using trade history and Yahoo Finance quotes",
+  },
+  {
+    title: "LetShop",
+    slug: "letshop",
+    description:
+      "Responsive e-commerce storefront with product discovery, a persistent cart, and simulated checkout.",
+    longDescription:
+      "Built a React storefront that takes users from product discovery through checkout and order confirmation. Product search, filtering, and sorting run in the browser, and the cart persists between visits.",
+    techStack: ["React", "JavaScript", "Vite", "React Router", "CSS"],
+    github: "https://github.com/MayureshTardekar/letshop-e-com",
+    githubLabel: "Prototype code",
+    image: "/images/letshop.jpg",
+    featured: true,
+    year: "2025",
+    problemStatement:
+      "A storefront needs to make it easy to find products, review a cart, and complete checkout on both desktop and mobile.",
+    solutionApproach:
+      "Used React Router for the shopping flow, React Context for shared cart state, and localStorage to keep cart items across reloads.",
+    keyFeatures: [
+      "Search by product name or description, filter by category, and sort by price or rating",
+      "Product detail pages with quantity selection",
+      "Persistent cart with editable quantities and order totals",
+      "Validated checkout form and simulated order confirmation",
+    ],
+    challenges: [
+      "Keep cart quantities and totals consistent across the product, cart, and checkout pages with one shared cart state.",
+      "Pass a snapshot of the items and total to the confirmation page so it can show the order after the cart clears.",
+    ],
+    architecture:
+      "Local product catalog → React Router storefront → React Context cart persisted in localStorage → Simulated checkout and order confirmation",
+  },
 ];
 
 export interface TimelineItem {
   title: string;
   subtitle: string;
+  logo?: string;
   location: string;
   period: string;
   description: string;
@@ -440,6 +564,7 @@ export const TIMELINE: TimelineItem[] = [
   {
     title: "Master of Computer Applications (MCA)",
     subtitle: "Sardar Patel Institute of Technology (Autonomous)",
+    logo: "/images/spit-logo.png",
     location: "Mumbai, India",
     period: "2025 — 2027",
     description:
@@ -449,6 +574,7 @@ export const TIMELINE: TimelineItem[] = [
   {
     title: "Bachelor of Science in Information Technology",
     subtitle: "Thakur Ramnarayan College of Arts & Commerce",
+    logo: "/images/trcac-logo.png",
     location: "Mumbai, India",
     period: "2022 — 2025",
     description:
@@ -458,26 +584,10 @@ export const TIMELINE: TimelineItem[] = [
   {
     title: "Alkimi Move FWD Hackathon",
     subtitle: "Hackathon Participant",
+    logo: "/images/alkimi-logo.jpg",
     location: "",
     period: "2025",
     description: "Participated and competed in the Alkimi Move FWD Hackathon.",
-    type: "achievement",
-  },
-  {
-    title: "SPIT REDACT Hackathon",
-    subtitle: "Hackathon Participant",
-    location: "",
-    period: "2025",
-    description: "Participated and competed in the SPIT REDACT Hackathon.",
-    type: "achievement",
-  },
-  {
-    title: "NPTEL Certifications",
-    subtitle: "ML, Big Data, Coding Theory",
-    location: "",
-    period: "2024",
-    description:
-      "Earned NPTEL certifications in Machine Learning, Big Data, and Coding Theory.",
     type: "achievement",
   },
 ];
@@ -490,7 +600,7 @@ export const TERMINAL_COMMANDS: Record<string, string> = {
   experience  - View my education & achievements
   contact     - Get my contact info
   github      - Visit my GitHub
-  resume      - Download resume (Options: -tech, -ats, -photo)
+  resume      - Download my resume
   clear       - Clear terminal
   sudo hire-me - 😏`,
   about: `
@@ -498,39 +608,26 @@ export const TERMINAL_COMMANDS: Record<string, string> = {
 > Software Engineer | Full-Stack Developer
 > Mumbai, India
 >
-> MCA student at SPIT Mumbai. Passionate about
-> building scalable web applications, exploring
-> blockchain & AI. I love turning complex problems
-> into elegant, performant solutions.`,
+> MCA student at SPIT Mumbai.
+> ${PERSONAL_INFO.bio}`,
   skills: `
-> Languages:  JavaScript, TypeScript, Python, Java, C++
+> Languages:  JavaScript, TypeScript, Python, Java, C++, Solidity
 > Frontend:   React, Next.js, Tailwind CSS
 > Backend:    Node.js, Express
 > Databases:  MongoDB, MySQL, Supabase, Prisma
 > DevOps:     AWS, Docker, Kubernetes, Linux
-> Blockchain: Solidity, ethers.js, OpenZeppelin
 > Tools:      Git, GitHub, Postman`,
-  projects: `
-> 1. AgentForge — AI No-Code Chatbot Builder
->    React, TypeScript, Supabase, pgvector
->
-> 2. EzyVote — Decentralized Voting dApp
->    Solidity, Hardhat, ethers.js, OpenZeppelin
->
-> 3. BidArena — Real-Time Auction Platform
->    React, TypeScript, Node.js, MongoDB
->
-> 4. Sahayak — AI Railway Complaint System (Hackathon)
->    React, TypeScript, Python, Supabase, Gemini API`,
+  projects: PROJECTS.map(
+    (project, index) =>
+      `> ${index + 1}. ${project.title}\n>    ${project.techStack.join(", ")}`
+  ).join("\n>\n"),
   experience: `
 > Education:
 >   MCA @ SPIT Mumbai (2025-2027)
 >   BSc IT @ Thakur Ramnarayan College (2022-2025)
 >
 > Achievements:
->   Alkimi Move FWD Hackathon (2025)
->   SPIT REDACT Hackathon (2025)
->   NPTEL Certs - ML, Big Data, Coding Theory (2024)`,
+>   Alkimi Move FWD Hackathon (2025)`,
   contact: `
 > Email:    mayutardekar1205@gmail.com
 > LinkedIn: linkedin.com/in/mayuop

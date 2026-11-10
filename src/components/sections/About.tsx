@@ -1,7 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, GraduationCap, Code, Rocket } from "lucide-react";
+import { MapPin, GraduationCap, Code, Rocket, RotateCw } from "lucide-react";
 import { PERSONAL_INFO } from "@/lib/constants";
 
 const highlights = [
@@ -11,14 +12,12 @@ const highlights = [
     value: "MCA @ SPIT Mumbai",
   },
   {
-    icon: Code,
     label: "Focus",
-    value: "Full-Stack Development",
   },
   {
     icon: Rocket,
     label: "Interests",
-    value: "AI, Blockchain, SaaS",
+    value: "Technology",
   },
   {
     icon: MapPin,
@@ -26,6 +25,42 @@ const highlights = [
     value: "Mumbai, India",
   },
 ];
+
+function FocusCard() {
+  const [flipped, setFlipped] = useState(false);
+  const face = "glass col-start-1 row-start-1 flex flex-col items-start rounded-xl p-4 backface-hidden";
+
+  return (
+    <button
+      type="button"
+      onClick={() => setFlipped((current) => !current)}
+      className="group h-full w-full cursor-pointer rounded-xl text-left perspective-[800px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+    >
+      <span
+        className={`grid h-full transform-3d transition-transform duration-500 motion-reduce:transition-none ${flipped ? "rotate-y-180" : ""}`}
+      >
+        <span aria-hidden={flipped} className={face}>
+          <span className="mb-2 flex w-full items-center justify-between">
+            <Code size={24} className="text-primary" aria-hidden="true" />
+            <RotateCw size={16} className="text-muted-foreground group-hover:text-primary" aria-hidden="true" />
+          </span>
+          <span className="text-xs text-muted-foreground">Focus</span>
+          <span className="text-sm font-medium text-foreground">All Rounder</span>
+        </span>
+        <span aria-hidden={!flipped} className={`${face} gap-1`} style={{ transform: "rotateY(180deg)" }}>
+          <span className="flex w-full items-center justify-between gap-2 text-sm font-medium text-foreground">
+            All Rounder
+            <RotateCw size={16} className="shrink-0 text-muted-foreground group-hover:text-primary" aria-hidden="true" />
+          </span>
+          <span className="text-xs leading-relaxed text-muted-foreground">
+            My focus is full-stack development and cloud. With the right training,
+            I&apos;m ready to take on new areas.
+          </span>
+        </span>
+      </span>
+    </button>
+  );
+}
 
 export default function About() {
   return (
@@ -58,10 +93,9 @@ export default function About() {
               {PERSONAL_INFO.bio}
             </p>
             <p className="text-muted-foreground">
-              Right now I&apos;m focused on RAG products, real-time systems,
-              and blockchain apps through projects like AgentForge, BidArena,
-              EzyVote, and Sahayak. I&apos;m looking for internship roles where
-              I can build production features end to end.
+              I&apos;m pursuing my MCA at SPIT Mumbai. With ForgeAgent and Dexter Write,
+              I&apos;ve been exploring how AI fits into everyday workflows. I&apos;m looking
+              for an opportunity to build and ship features end to end.
             </p>
           </motion.div>
 
@@ -80,13 +114,17 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="glass rounded-xl p-4"
+                className={item.icon ? "glass rounded-xl p-4" : undefined}
               >
-                <item.icon size={24} className="mb-2 text-primary" />
-                <p className="text-xs text-muted-foreground">{item.label}</p>
-                <p className="text-sm font-medium text-foreground">
-                  {item.value}
-                </p>
+                {item.icon ? (
+                  <>
+                    <item.icon size={24} className="mb-2 text-primary" />
+                    <p className="text-xs text-muted-foreground">{item.label}</p>
+                    <p className="text-sm font-medium text-foreground">{item.value}</p>
+                  </>
+                ) : (
+                  <FocusCard />
+                )}
               </motion.div>
             ))}
           </motion.div>

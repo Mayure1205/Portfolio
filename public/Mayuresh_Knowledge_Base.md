@@ -23,7 +23,7 @@ GitHub: https://github.com/MayureshTardekar
 LeetCode: https://leetcode.com/u/Mayuresh1205/
 Portfolio Website: https://mayureshlife.website/
 Languages: English, Hindi, Marathi
-Target Roles: Full-Stack Developer, Backend Engineer, Web3 / Blockchain Engineer, Software Engineer
+Target Roles: Full-Stack Developer, Backend Engineer, Software Engineer
 Availability: Immediate for internships of 3 months, 6 months, or suitable role-based opportunities
 Work Preference: Open to remote, hybrid, or on-site opportunities depending on the role
 Relocation Preference: Fully open to relocate, with strong preference for Bangalore or Hyderabad
@@ -34,11 +34,11 @@ Important availability clarification:
 Mayuresh is currently pursuing MCA, so internship and suitable remote/hybrid opportunities are preferred. Full-time availability depends on role structure and academic schedule.
 3. Short Professional Introductions
 One-Line Introduction
-Mayuresh Tardekar is a full-stack and backend-focused developer pursuing MCA at SPIT Mumbai, with hands-on experience in RAG chatbots, real-time systems, and blockchain applications.
+Mayuresh Tardekar is a full-stack and backend-focused developer pursuing MCA at SPIT Mumbai, with hands-on experience in RAG chatbots, document tools, and real-time systems.
 Three-Line Introduction
-Mayuresh Tardekar is a software developer from Mumbai currently pursuing MCA at Sardar Patel Institute of Technology. He enjoys building practical software products across full-stack development, backend systems, AI/RAG pipelines, and Web3 applications. His strongest projects include AgentForge, a RAG-based chatbot builder, BidArena, a real-time auction platform, and EzyVote, a decentralized voting dApp.
+Mayuresh Tardekar is a software developer from Mumbai currently pursuing MCA at Sardar Patel Institute of Technology. He enjoys building practical software products across full-stack development, backend systems, AI/RAG pipelines, and cloud services. His strongest projects include ForgeAgent, a RAG-based chatbot builder, BidArena, a real-time auction platform, and EzyVote, a decentralized voting dApp.
 Recruiter-Friendly Summary
-Mayuresh is a hands-on developer who enjoys shipping functional software rather than only writing theoretical code. He has worked on RAG pipelines, Supabase/PostgreSQL, real-time Socket.IO systems, smart contracts, and full-stack product interfaces. He is actively looking for paid software engineering, full-stack, backend, or blockchain-focused internship opportunities and is open to relocation.
+Mayuresh is a hands-on developer who enjoys shipping functional software rather than only writing theoretical code. He has worked on RAG pipelines, Supabase/PostgreSQL, real-time Socket.IO systems, smart contracts, and full-stack product interfaces. He is actively looking for paid software engineering, full-stack, or backend internships and is open to relocation.
 4. Education
 Sardar Patel Institute of Technology, Mumbai
 Degree: Master of Computer Applications
@@ -73,7 +73,7 @@ TypeScript: Used in modern frontend and backend projects
 Java: Academic foundation in OOP concepts and programming structure
 C++: Academic foundation in DSA and low-level programming concepts
 Python: Used for AI pipelines, machine learning experiments, and Flask-based services
-Solidity: Used for smart contract development in blockchain projects
+Solidity: Used for smart contract development in EzyVote
 Frontend and UI
 React 18
 Next.js App Router
@@ -103,7 +103,7 @@ Embeddings
 Vector similarity search
 Prompt design
 LLM orchestration with providers such as Claude, Gemini, or similar models
-Web3 and Blockchain
+Smart Contracts
 Solidity smart contracts
 ethers.js v6
 MetaMask integration
@@ -119,15 +119,15 @@ Linux and Bash scripting
 Postman API testing
 AWS deployment exposure
 6. Core Projects
-6.1 AgentForge - AI No-Code Chatbot Builder
+6.1 ForgeAgent - AI No-Code Chatbot Builder
 Short Description
-AgentForge is an embeddable AI chatbot builder that allows businesses to upload documents or scrape URLs and create custom chatbots that can be embedded into any website using a single script.
+ForgeAgent is an embeddable AI chatbot builder that allows businesses to upload documents or scrape URLs and create custom chatbots that can be embedded into any website using a single script.
 Problem It Solves
-Many businesses have important information inside PDFs, policy documents, help pages, product pages, and internal documentation. Normal chatbots do not understand that specific business context. AgentForge solves this by turning business documents into a searchable knowledge base and using RAG to answer user questions from that knowledge.
+Many businesses have important information inside PDFs, policy documents, help pages, product pages, and internal documentation. Normal chatbots do not understand that specific business context. ForgeAgent solves this by turning business documents into a searchable knowledge base and using RAG to answer user questions from that knowledge.
 Mayuresh's Role
-AgentForge is a solo project built and actively enhanced by Mayuresh. He designed the product idea, backend flow, RAG architecture, database structure, document handling, chatbot widget, configuration system, and frontend dashboard.
-How AgentForge Works Under the Hood
-AgentForge uses a Retrieval-Augmented Generation pipeline. It does not train a new model from scratch. Instead, it creates a searchable knowledge base from business documents and uses an LLM to generate answers from the most relevant retrieved context.
+ForgeAgent is a solo project built and actively enhanced by Mayuresh. He designed the product idea, backend flow, RAG architecture, database structure, document handling, chatbot widget, configuration system, and frontend dashboard.
+How ForgeAgent Works Under the Hood
+ForgeAgent uses a Retrieval-Augmented Generation pipeline. It does not train a new model from scratch. Instead, it creates a searchable knowledge base from business documents and uses an LLM to generate answers from the most relevant retrieved context.
 Pipeline:
 Ingestion:
 Users upload PDFs, markdown files, text files, or import content from URLs. The system extracts readable text from these sources.
@@ -142,7 +142,7 @@ Storage:
 Text chunks, vector embeddings, document metadata, bot configuration, and bot ownership information are stored in Supabase PostgreSQL with pgvector support.
 
 Query Embedding:
-When a visitor asks a question through the chat widget, AgentForge creates an embedding for the user's query.
+When a visitor asks a question through the chat widget, ForgeAgent creates an embedding for the user's query.
 
 Vector Search:
 The system performs similarity search, such as cosine distance search, against the stored document embeddings for that specific bot.
@@ -184,9 +184,9 @@ GitHub: https://github.com/MayureshTardekar/AgentForge
 Current Status: Working prototype under active enhancement
 Portfolio Context: This project is one of Mayuresh's strongest demonstrations of AI, backend, database, and product-building ability
 Motivation
-Mayuresh built AgentForge out of curiosity to see whether a practical RAG pipeline could be packaged into an easy product where any business can upload documents and instantly create a website chatbot.
+Mayuresh built ForgeAgent out of curiosity to see whether a practical RAG pipeline could be packaged into an easy product where any business can upload documents and instantly create a website chatbot.
 Best Interview Explanation
-AgentForge is a no-code RAG chatbot builder. A business uploads documents, the system extracts and chunks the text, stores embeddings in Supabase PostgreSQL using pgvector, retrieves the most relevant chunks for each user question, and passes those chunks to an LLM to generate grounded, business-specific answers.
+ForgeAgent is a no-code RAG chatbot builder. A business uploads documents, the system extracts and chunks the text, stores embeddings in Supabase PostgreSQL using pgvector, retrieves the most relevant chunks for each user question, and passes those chunks to an LLM to generate grounded, business-specific answers.
 Current Improvements Mayuresh Is Exploring
 Better retrieval scoring
 Better fallback behavior when documents do not contain an answer
@@ -196,9 +196,9 @@ Better document ingestion for large or nested documentation sources
 Better source grounding without making responses look robotic
 6.2 EzyVote - Secure Decentralized Voting dApp
 Short Description
-EzyVote is a decentralized voting application built as Mayuresh's BSc IT major project. It uses Solidity smart contracts, MetaMask wallet integration, and blockchain-based vote verification.
+EzyVote is a decentralized voting application built as Mayuresh's BSc IT major project. It uses Solidity smart contracts, MetaMask wallet integration, and verifiable on-chain vote records.
 Problem It Solves
-Traditional digital voting systems can suffer from trust, manipulation, and auditability concerns. EzyVote explores how blockchain can provide transparent and verifiable voting records with smart contract-based rules.
+Traditional digital voting systems can suffer from trust, manipulation, and auditability concerns. EzyVote uses smart contracts to enforce voting rules and create verifiable records.
 Mayuresh's Role
 Mayuresh built the major project architecture, smart contract logic, frontend integration, wallet connection, and vote receipt handling.
 Smart Contract Security Safeguards
@@ -222,7 +222,7 @@ Used start and end time checks to ensure votes are only accepted during the vali
 
 DApp Client Integration
 Connected MetaMask using ethers.BrowserProvider from ethers.js v6.
-Used wallet signatures to authenticate blockchain actions.
+Used wallet signatures to authenticate contract calls.
 Deployed smart contracts through Hardhat on Polygon Amoy Testnet for low-cost testing.
 Used MongoDB with compound indexes to store audited EIP-191 signed vote receipts and reduce database-level tampering.
 Links and Status
@@ -230,7 +230,7 @@ GitHub: https://github.com/MayureshTardekar/EzyVote
 Deployment: Polygon Amoy Testnet
 Current Status: Completed major project and functional prototype
 Best Interview Explanation
-EzyVote is a blockchain-based voting dApp focused on secure voting logic. It uses Solidity smart contracts with access control, pause mechanisms, reentrancy protection, and double-voting prevention. The frontend connects through MetaMask using ethers.js v6, and the contract was tested on the Polygon Amoy Testnet.
+EzyVote is a decentralized voting app focused on secure voting logic. It uses Solidity smart contracts with access control, pause mechanisms, reentrancy protection, and double-voting prevention. The frontend connects through MetaMask using ethers.js v6, and the contract was tested on the Polygon Amoy Testnet.
 6.3 BidArena - Real-Time Auction Platform
 Short Description
 BidArena is a real-time auction platform built to handle live bidding, near-simultaneous bid conflicts, anti-sniping extensions, and WebSocket-based updates.
@@ -303,46 +303,47 @@ Linear Regression with timeout handling
 Anomaly markers
 Heatmap charts
 Geo-data mapping
-Sui blockchain-based bidding system
+Bidding system built on Sui
 Key Learning
 This project taught Mayuresh to prioritize demo-ready workflows, rapid iteration, and clear product presentation instead of overbuilding too many features at once.
-7. Certifications
-Do not claim exact scores or certificate dates unless they are provided later.
-NPTEL Machine Learning:
-Completed coursework and certification modules covering classification algorithms, regression, model training, and evaluation metrics.
+7. Additional Projects
+Dexter Write is an AI-assisted Markdown and LaTeX workspace with live previews, bring-your-own-key provider support, MCP tools for editing documents, diff review, and PDF export.
+Live Demo: https://dexter-writer.vercel.app/
 
-NPTEL Big Data:
-Studied distributed storage architectures, map-reduce concepts, and large-scale data processing fundamentals.
+FitGo is an offline-first Flutter fitness tracker that logs calories, fasting, activity, hydration, sleep, and weight. It uses Hive for local storage, Riverpod for state, and Supabase for authentication.
+GitHub: https://github.com/MayureshTardekar/FitGo
 
-NPTEL Coding Theory:
-Learned concepts in information theory, error-correcting codes, and mathematical data transmission logic.
+ProStock is a paper trading simulator for Indian stock markets with virtual funds, watchlists, and portfolio analytics. It uses React, TypeScript, Express, and MySQL.
+GitHub: https://github.com/MayureshTardekar/ProStock
+
+LetShop is a responsive React storefront with product search, category filters, a cart that persists across visits, and simulated checkout.
 
 8. Personality, Work Style, and Interests
 Mayuresh has a strong builder mindset and prefers learning by creating functional projects.
-He enjoys backend architecture, AI/RAG systems, Web3, and full-stack product building.
+He enjoys backend architecture, AI/RAG systems, cloud, and full-stack product building.
 He likes solving technical problems such as concurrency, real-time synchronization, smart contract safety, and retrieval quality in RAG systems.
 He prefers focused and quiet working environments but can collaborate well in team settings.
 He enjoys reading manga and light novels, watching anime, playing mobile games, going to the gym, and exploring backend software architectures.
 If mentioning Japanese, say: "He understands some basic Japanese phrases through anime exposure." Do not claim professional or conversational fluency unless updated later.
 9. Recruiter and Interview FAQs
 Q: Tell me about yourself.
-A: Mayuresh Tardekar is a full-stack and backend-focused developer from Mumbai currently pursuing MCA at SPIT Mumbai. He enjoys building practical software products across AI/RAG, backend systems, real-time applications, and blockchain. His strongest projects include AgentForge, a RAG-based chatbot builder, BidArena, a real-time auction platform, and EzyVote, a decentralized voting dApp.
+A: Mayuresh Tardekar is a full-stack and backend-focused developer from Mumbai currently pursuing MCA at SPIT Mumbai. He enjoys building practical software products across AI/RAG, backend systems, and real-time applications. His strongest projects include ForgeAgent, a RAG-based chatbot builder, BidArena, a real-time auction platform, and EzyVote, a decentralized voting dApp.
 Q: Why should we hire Mayuresh?
-A: Mayuresh is a hands-on builder who can take an idea from architecture to implementation. He has worked on practical problems like RAG retrieval pipelines in AgentForge, race-condition handling in BidArena, and smart contract security in EzyVote. He learns quickly, enjoys solving difficult engineering problems, and focuses on shipping functional software rather than only theoretical code.
+A: Mayuresh is a hands-on builder who can take an idea from architecture to implementation. He has worked on practical problems like RAG retrieval pipelines in ForgeAgent, race-condition handling in BidArena, and smart contract security in EzyVote. He learns quickly, enjoys solving difficult engineering problems, and focuses on shipping functional software rather than only theoretical code.
 Q: What is Mayuresh's best project?
-A: His strongest project is AgentForge because it combines full-stack development, backend architecture, database design, vector search, RAG pipelines, chatbot UX, and product thinking. BidArena is also a strong project because it demonstrates backend concurrency, real-time updates, and transaction safety.
-Q: Explain AgentForge simply.
-A: AgentForge is a no-code chatbot builder for businesses. A business uploads documents or imports a URL, and AgentForge converts that content into a searchable knowledge base. When a visitor asks a question, the system retrieves the most relevant document chunks and uses an LLM to answer from that business-specific context.
-Q: Explain AgentForge technically.
-A: AgentForge uses a RAG pipeline. It extracts text from PDFs, markdown, text files, or URLs, splits the content into chunks, generates embeddings for each chunk, and stores them in Supabase PostgreSQL with pgvector. When a user asks a question, the system embeds the query, performs vector similarity search for the relevant bot, sends the best chunks to an LLM, and generates a grounded answer.
+A: His strongest project is ForgeAgent because it combines full-stack development, backend architecture, database design, vector search, RAG pipelines, chatbot UX, and product thinking. BidArena is also a strong project because it demonstrates backend concurrency, real-time updates, and transaction safety.
+Q: Explain ForgeAgent simply.
+A: ForgeAgent is a no-code chatbot builder for businesses. A business uploads documents or imports a URL, and ForgeAgent converts that content into a searchable knowledge base. When a visitor asks a question, the system retrieves the most relevant document chunks and uses an LLM to answer from that business-specific context.
+Q: Explain ForgeAgent technically.
+A: ForgeAgent uses a RAG pipeline. It extracts text from PDFs, markdown, text files, or URLs, splits the content into chunks, generates embeddings for each chunk, and stores them in Supabase PostgreSQL with pgvector. When a user asks a question, the system embeds the query, performs vector similarity search for the relevant bot, sends the best chunks to an LLM, and generates a grounded answer.
 Q: What was the hardest technical challenge?
 A: In BidArena, one hard challenge was handling multiple bids arriving at almost the same time near the auction end. Without proper transaction safety, two users could appear to win or stale bids could be accepted. Mayuresh handled this using serializable database transactions and row-level locking patterns so that only one transaction evaluates and updates the auction state at a time.
 Q: Why full-stack development?
 A: Mayuresh enjoys understanding the complete lifecycle of a product. Backend APIs, database design, and system architecture are important, but the frontend experience makes the product usable. Full-stack development lets him build complete features end-to-end.
 Q: Why AI and RAG?
-A: Generic LLMs often cannot answer questions about a specific business unless that information is provided. RAG is practical because it connects business documents to an LLM through retrieval. Building AgentForge helped Mayuresh understand document ingestion, chunking, vector search, prompt design, and grounded answer generation.
-Q: Why blockchain?
-A: Mayuresh finds decentralized trust systems interesting. With EzyVote, he learned how to write careful smart contract logic using access control, reentrancy protection, pause mechanisms, and input validation. Blockchain development requires secure and precise code because deployed smart contracts are difficult to modify.
+A: Generic LLMs often cannot answer questions about a specific business unless that information is provided. RAG is practical because it connects business documents to an LLM through retrieval. Building ForgeAgent helped Mayuresh understand document ingestion, chunking, vector search, prompt design, and grounded answer generation.
+Q: What did Mayuresh learn from writing smart contracts?
+A: Mayuresh finds decentralized trust systems interesting. With EzyVote, he learned how to write careful smart contract logic using access control, reentrancy protection, pause mechanisms, and input validation. Deployed smart contracts are difficult to modify, so he learned to validate inputs and test security safeguards carefully.
 Q: What are Mayuresh's strengths?
 A: His strengths are fast self-learning, practical product building, backend problem-solving, curiosity about complex systems, and willingness to take ownership of technical challenges.
 Q: What is Mayuresh's weakness?
@@ -390,4 +391,4 @@ Public deployment links not listed in this file
 Awards or ranks not listed in this file
 Professional Japanese fluency
 Exact home address or pincode
-Claims that AgentForge is production-scale unless updated later
+Claims that ForgeAgent is production-scale unless updated later

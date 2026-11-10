@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { GraduationCap, Briefcase, Trophy } from "lucide-react";
+import Image from "next/image";
 import type { TimelineItem as TimelineItemType } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -49,14 +50,24 @@ export default function TimelineItem({ item, index }: TimelineItemProps) {
       {/* Card */}
       <div className="glass flex-1 rounded-xl p-5">
         <div className="mb-3 flex items-start justify-between gap-2">
-          <div
-            className={cn(
-              "flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border",
-              colorMap[item.type]
-            )}
-          >
-            <Icon size={18} />
-          </div>
+          {item.logo ? (
+            <Image
+              src={item.logo}
+              alt=""
+              width={56}
+              height={56}
+              className="h-14 w-14 shrink-0 rounded-lg border border-border bg-white object-contain p-1.5"
+            />
+          ) : (
+            <div
+              className={cn(
+                "flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border",
+                colorMap[item.type]
+              )}
+            >
+              <Icon size={18} />
+            </div>
+          )}
           <span className="rounded-full bg-muted px-3 py-1 text-xs font-mono text-muted-foreground">
             {item.period}
           </span>

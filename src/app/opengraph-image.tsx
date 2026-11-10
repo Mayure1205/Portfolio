@@ -69,7 +69,7 @@ export default function OpenGraphImage() {
           <span>Next.js</span>
           <span>Node.js</span>
           <span>AI</span>
-          <span>Blockchain</span>
+          <span>Cloud</span>
         </div>
       </div>
     ),

@@ -45,6 +45,7 @@ yarn-error.log*
 
 # resume / personal docs
 *.pdf
+!/public/resume.pdf
 
 # typescript
 *.tsbuildinfo

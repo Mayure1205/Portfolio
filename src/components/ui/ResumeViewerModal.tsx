@@ -3,38 +3,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Download, FileText, ExternalLink, Maximize2, Minimize2 } from "lucide-react";
+import { PERSONAL_INFO } from "@/lib/constants";
 
 interface ResumeViewerModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-const resumeOptions = [
-  {
-    id: "tech",
-    label: "v1",
-    file: "/resumes/Mayuresh-tech.pdf",
-    downloadName: "Mayuresh_Tardekar_Resume_v1.pdf",
-    description: "Tailored for software engineering & full-stack development roles.",
-  },
-  {
-    id: "ats",
-    label: "v2",
-    file: "/resumes/Mayuresh-ATS.pdf",
-    downloadName: "Mayuresh_Tardekar_Resume_v2.pdf",
-    description: "Text-optimized, clean format without a photo (perfect for automated trackers).",
-  },
-  {
-    id: "photo",
-    label: "v3",
-    file: "/resumes/Mayuresh-photo.pdf",
-    downloadName: "Mayuresh_Tardekar_Resume_v3.pdf",
-    description: "Visual resume containing a professional profile photo.",
-  },
-];
-
 export default function ResumeViewerModal({ isOpen, onClose }: ResumeViewerModalProps) {
-  const [activeTab, setActiveTab] = useState(resumeOptions[0]);
   const [isMaximized, setIsMaximized] = useState(false);
 
   return (
@@ -67,8 +43,8 @@ export default function ResumeViewerModal({ isOpen, onClose }: ResumeViewerModal
                   <FileText size={20} />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-foreground">Select & View Resume</h3>
-                  <p className="text-xs text-muted-foreground">Choose a format to view or download</p>
+                  <h3 className="text-lg font-bold text-foreground">Resume</h3>
+                  <p className="text-xs text-muted-foreground">{PERSONAL_INFO.name}</p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
@@ -89,33 +65,11 @@ export default function ResumeViewerModal({ isOpen, onClose }: ResumeViewerModal
               </div>
             </div>
 
-            {/* Tabs Selector */}
-            <div className="border-b border-border bg-muted/20 px-6 py-3">
-              <div className="flex flex-wrap gap-2">
-                {resumeOptions.map((opt) => (
-                  <button
-                    key={opt.id}
-                    onClick={() => setActiveTab(opt)}
-                    className={`rounded-lg px-4 py-2 text-xs font-semibold transition-all cursor-pointer ${
-                      activeTab.id === opt.id
-                        ? "bg-primary text-primary-foreground shadow-md shadow-primary/20"
-                        : "border border-border bg-card text-muted-foreground hover:border-primary hover:text-foreground"
-                    }`}
-                  >
-                    {opt.label}
-                  </button>
-                ))}
-              </div>
-              <p className="mt-2 text-xs text-muted-foreground italic">
-                {activeTab.description}
-              </p>
-            </div>
-
             {/* PDF Viewer / Document Preview Container */}
             <div className="relative flex-1 bg-black/10 p-4">
               <iframe
-                src={`${activeTab.file}#toolbar=0&navpanes=0&scrollbar=0&view=Fit`}
-                title={`${activeTab.label} Resume Preview`}
+                src={`${PERSONAL_INFO.resumeUrl}#toolbar=0&navpanes=0&scrollbar=0&view=Fit`}
+                title="Resume Preview"
                 className="h-full w-full rounded-lg border border-border/50 bg-card shadow-inner"
               />
             </div>
@@ -127,7 +81,7 @@ export default function ResumeViewerModal({ isOpen, onClose }: ResumeViewerModal
               </span>
               <div className="flex gap-2">
                 <a
-                  href={activeTab.file}
+                  href={PERSONAL_INFO.resumeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2 text-xs font-semibold text-foreground transition-all hover:border-primary cursor-pointer"
@@ -136,8 +90,8 @@ export default function ResumeViewerModal({ isOpen, onClose }: ResumeViewerModal
                   Open in New Tab
                 </a>
                 <a
-                  href={activeTab.file}
-                  download={activeTab.downloadName}
+                  href={PERSONAL_INFO.resumeUrl}
+                  download={PERSONAL_INFO.resumeFilename}
                   className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground transition-all hover:brightness-110 shadow-md shadow-primary/10 cursor-pointer"
                 >
                   <Download size={14} />

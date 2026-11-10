@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Mayuresh Tardekar | Software Engineer",
   description:
-    "Full-Stack Developer passionate about building scalable web applications, blockchain, and AI. MCA student at SPIT Mumbai.",
+    "Software engineer building full-stack web applications and AI tools. MCA student at SPIT Mumbai.",
   keywords: [
     "Mayuresh Tardekar",
     "Software Engineer",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mayuresh Tardekar | Software Engineer",
     description:
-      "Full-Stack Developer passionate about building scalable web applications, blockchain, and AI.",
+      "Software engineer building full-stack web applications and AI tools.",
     url: siteUrl,
     siteName: "Mayuresh Tardekar",
     images: [
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mayuresh Tardekar | Software Engineer",
     description:
-      "Full-Stack Developer passionate about scalable web applications, blockchain, and AI.",
+      "Software engineer building full-stack web applications and AI tools.",
     images: ["/opengraph-image"],
   },
 };

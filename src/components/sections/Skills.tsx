@@ -14,7 +14,6 @@ const categories: ("All" | SkillCategory)[] = [
   "Backend",
   "Database",
   "DevOps",
-  "Blockchain",
   "Tools",
 ];
 
